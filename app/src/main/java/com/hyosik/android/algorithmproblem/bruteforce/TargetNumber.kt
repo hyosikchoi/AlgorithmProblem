@@ -30,13 +30,13 @@ fun main() {
 
 }
 
-fun solution(numbers : IntArray , target : Int) : Int {
+private fun solution(numbers : IntArray , target : Int) : Int {
 
     return dfs(numbers,target,0,0)
 
 }
 
-fun dfs(numbers: IntArray , target: Int , depth : Int , sumInt : Int) : Int {
+private fun dfs(numbers: IntArray , target: Int , depth : Int , sumInt : Int) : Int {
 
     var count = 0
 
