@@ -6,6 +6,7 @@ package com.hyosik.android.algorithmproblem.sort
  */
 fun main() {
     println(solution(6 , intArrayOf(1, 3, 2, 5, 4, 5, 2, 3)))
+    println(solution2(6 , intArrayOf(1, 3, 2, 5, 4, 5, 2, 3)))
 }
 
 private fun solution(k: Int, tangerine: IntArray): Int {
@@ -54,3 +55,22 @@ private fun solution(k: Int, tangerine: IntArray): Int {
 
     return answer
 }
+
+private fun solution2(k: Int, tangerine: IntArray): Int {
+    val groupMap: Map<Int, List<Int>> = tangerine.groupBy { it }
+    val sortedValueSize = groupMap.toList().sortedByDescending { it.second.size }
+
+    var temporaryTangerine: Int = 0
+    var answer: Int = 0
+
+    sortedValueSize.forEach {
+        if(temporaryTangerine < k) {
+            temporaryTangerine += it.second.size
+            answer++
+        } else return@forEach
+    }
+
+    return answer
+
+}
+
