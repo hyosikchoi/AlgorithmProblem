@@ -11,7 +11,7 @@ fun main() {
     print(solution(n,k,enemy))
 }
 
-fun solution(n: Int, k: Int, enemy: IntArray): Int {
+private fun solution(n: Int, k: Int, enemy: IntArray): Int {
 
     var answer: Int = 0
     var soldier = n
